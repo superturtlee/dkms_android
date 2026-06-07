@@ -1,0 +1,39 @@
+name: Build Manager Module
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'magisk_modules/dkms-manager/**'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version
+        id: ver
+        run: echo "VERSION=$(grep '^version=' magisk_modules/dkms-manager/module.prop | cut -d= -f2)" >> "$GITHUB_OUTPUT"
+
+      - name: Package module
+        run: |
+          cd magisk_modules/dkms-manager
+          zip -r ../../dkms-manager-${{ steps.ver.outputs.VERSION }}.zip . -x '*.git*'
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dkms-manager-${{ steps.ver.outputs.VERSION }}
+          path: dkms-manager-*.zip
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: manager-v${{ steps.ver.outputs.VERSION }}
+          name: DKMS Manager v${{ steps.ver.outputs.VERSION }}
+          files: dkms-manager-*.zip
+          make_latest: false
