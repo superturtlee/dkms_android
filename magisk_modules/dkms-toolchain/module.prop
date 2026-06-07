@@ -1,0 +1,6 @@
+id=dkms-toolchain
+name=DKMS Clang Toolchain
+version=19.1.0
+versionCode=19100
+author=dkms_android
+description=LLVM/Clang 19.1.0 aarch64 toolchain for DKMS kernel module building

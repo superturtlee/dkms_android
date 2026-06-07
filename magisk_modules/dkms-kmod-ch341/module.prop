@@ -1,0 +1,6 @@
+id=dkms-kmod-ch341
+name=DKMS CH341 USB-Serial Driver
+version=1.8
+versionCode=1
+author=WCH
+description=CH341 USB to serial port driver - built and loaded via dkms_android.sh

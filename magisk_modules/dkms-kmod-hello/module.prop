@@ -1,0 +1,6 @@
+id=dkms-kmod-hello
+name=DKMS Hello Module
+version=1.0
+versionCode=1
+author=dkms_android
+description=Example DKMS kernel module (hello_dkms) - built and loaded via dkms_android.sh

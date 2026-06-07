@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DKMS Android</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero-card">
+        <div>
+          <p class="eyebrow">KernelSU Module WebUI</p>
+          <h1>DKMS Android</h1>
+          <p class="hero-copy">Dynamic Kernel Module System</p>
+        </div>
+        <div class="hero-meta">
+          <span class="chip" id="stateChip">Initializing</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>System</h2>
+            <button class="ghost-button" id="refreshBtn" type="button">Refresh</button>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Kernel</span>
+              <strong class="stat-value stat-small" id="kernelVersion">-</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Toolchain</span>
+              <strong class="stat-value stat-small" id="toolchainName">-</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Modules</span>
+              <strong class="stat-value" id="moduleCount">0</strong>
+            </article>
+            <article class="stat-card accent-card">
+              <span class="stat-label">Task</span>
+              <strong class="stat-value stat-small" id="taskMessage">Idle</strong>
+            </article>
+          </div>
+          <div class="action-strip">
+            <button class="primary-button" id="buildAllBtn" type="button">Build All</button>
+            <button class="ghost-button" id="rebuildAllBtn" type="button">Rebuild All</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Kernel Modules</h2>
+          </div>
+          <div id="moduleList" class="module-list">
+            <p class="empty-text">Loading module list...</p>
+          </div>
+        </section>
+
+        <section class="panel log-panel">
+          <div class="panel-heading">
+            <h2>Log</h2>
+            <button class="ghost-button" id="clearLogBtn" type="button">Clear</button>
+          </div>
+          <pre id="logOutput">Waiting for log output...</pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

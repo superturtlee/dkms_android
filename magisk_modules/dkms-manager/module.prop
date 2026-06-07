@@ -1,0 +1,6 @@
+id=dkms-manager
+name=DKMS Android Manager
+version=1.0
+versionCode=1
+author=dkms_android
+description=Dynamic Kernel Module System for Android

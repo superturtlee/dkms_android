@@ -1,0 +1,6 @@
+id=dkms-headers
+name=DKMS Linux Headers
+version=6.12.58
+versionCode=61258
+author=dkms_android
+description=Linux kernel headers for DKMS module building (6.12.58-android16-6-g376529f3e739-ab15072794-4k)
